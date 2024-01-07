@@ -6,7 +6,7 @@ A (collection of) very simple script(s) for managing VPN connections to virtual 
 Put the file `hackspace-tunnel.sh` wherever you like in a writable directory, let's say in `~/.local/share/hstnl`:
 ```shell
 mkdir -p ~/.local/share/hstnl
-wget https://github.com/hyprcub/hackspace-tunnel/master/hackspace-tunnel.sh -O ~/.local/share/hstnl/hackspace-tunnel.sh
+wget https://raw.githubusercontent.com/hyprcub/hackspace-tunnel/main/hackspace-tunnel.sh -O ~/.local/share/hstnl/hackspace-tunnel.sh
 ```
 
 Add these lines to your `.bashrc` or `.zshrc`:

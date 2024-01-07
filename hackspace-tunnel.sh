@@ -36,7 +36,7 @@ WORKDIR="$HOME/.cache/hstnl"
 CONFDIR="$HOME/.config/hstnl" # Put your .ovpn files there
 
 for d in $WORKDIR $CONFDIR; do
-    _cmd mkdir -p $d
+    mkdir -p $d
 done
 
 

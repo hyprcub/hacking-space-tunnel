@@ -9,7 +9,7 @@ mkdir -p ~/.local/bin
 wget https://raw.githubusercontent.com/hyprcub/hackspace-tunnel/main/hackspace-tunnel.sh -O ~/.local/bin/hstnl
 ```
 
-Add these lines to your `.bashrc` or `.zshrc` (if needed):
+Add this line to your `.bashrc` or `.zshrc` (if needed):
 ```shell
 export PATH=${PATH}:${HOME}/.local/bin
 ```
@@ -18,14 +18,20 @@ export PATH=${PATH}:${HOME}/.local/bin
 
 Download your `.ovpn` configuration files from your favorite hacking labs (HackTheBox, TryHackMe or whatever) and put them in `~/.config/hstnl`. The rest is self explanatory:
 ```
-Usage: _show_help <config_name | 'status' | 'stop'>
+HackSpaceTunnel v1.0.0
+
+Usage: ./hackspace-tunnel.sh <config_name | 'status' | 'stop' | 'list'> [-q|--quiet]
 
 Arguments:
-  config_name    Name of the configuration file (without the .ovpn extension).
-                 The 'config_name.ovpn' file must be located in the directory:
+  config         Name of the configuration file (without the .ovpn extension).
+                 The 'config.ovpn' file must be located in the directory:
                  /home/laurenth/.config/hstnl
 
   'status'       Check the status of the VPN connection.
+  'list'         List available OpenVPN configuration files.
   'stop'         Stop the VPN connection.
+
+Options:
+  -q, --quiet    Enable quiet mode. Minimizes the output of the script.
 ```
 

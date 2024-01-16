@@ -11,9 +11,26 @@ wget https://raw.githubusercontent.com/hyprcub/hackspace-tunnel/main/hackspace-t
 
 Add this line to your `.bashrc` or `.zshrc` (if needed):
 ```shell
-export PATH=${PATH}:${HOME}/.local/bin
+export PATH=$PATH:$HOME/.local/bin
 ```
 
+Finally these lines in `.zshrc` if using `zsh`:
+```shell
+if [ -f $HOME/.cache/hstnl/env.sh ]; then
+    source $HOME/.cache/hstnl/env.sh
+    PROMPT="%B┌──[%n@%m]─[$lhost@$lab]
+└──[%~]─╼%b "
+fi
+```
+
+or these in `.bashrc` if using `bash`:
+```shell
+if [ -f $HOME/.cache/hstnl/env.sh ]; then
+	source $HOME/.cache/hstnl/env.sh
+	export PS1="\e[1m┌──[\u@\h]─[$lhost@$lab]
+└──[\w]─╼\e[0m "
+fi
+```
 ## Usage
 
 Download your `.ovpn` configuration files from your favorite hacking labs (HackTheBox, TryHackMe or whatever) and put them in `~/.config/hstnl`. The rest is self explanatory:

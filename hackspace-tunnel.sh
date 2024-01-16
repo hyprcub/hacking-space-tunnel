@@ -148,6 +148,7 @@ _install_upsh() {
 	if [ -f "$UPSH" ]; then # If up.sh already exist, compare it and make a backup if needed
 
 		local TMPDIR=$(mktemp -d) # Temporary directory to write a good version of up.sh to compare with
+		# https://phoenixnap.com/kb/bash-trap-command
 		trap 'rm -rf "$TMPDIR"; return 1' INT TERM ERR
 
 		_write_upsh "$TMPDIR/up.sh"
@@ -232,6 +233,7 @@ EOF
 	done
 	# write to rc file
 	msg success "Environment variables set correctly."
+	[ -n "$BASH_VERSION" ] && msg notice "Please ${bold}'source $HSTNL_WORK_DIR/env.sh'${reset} for this session."
 }
 
 _unset_env() {
